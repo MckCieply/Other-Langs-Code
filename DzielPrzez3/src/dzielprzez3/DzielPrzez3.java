@@ -2,10 +2,7 @@
 package dzielprzez3;
 
 import java.util.Scanner;
-/**
- *
- * @author Student
- */
+
 public class DzielPrzez3 {
 
     public static void main(String[] args) {

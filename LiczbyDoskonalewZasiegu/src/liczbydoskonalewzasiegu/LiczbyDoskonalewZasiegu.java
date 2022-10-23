@@ -7,17 +7,17 @@ public class LiczbyDoskonalewZasiegu {
 
 
     public static void main(String[] args) {
-        int i, input, suma, j;
+        int liczba, zasieg, suma, dzielnik;
         suma = 0;
-        System.out.print("Podaj zasieg: "); input = (new Scanner(System.in)).nextInt();
-        for (i=1; i < input; i++){
+        System.out.print("Podaj zasieg: "); zasieg = (new Scanner(System.in)).nextInt();
+        for (liczba = 1; liczba < zasieg; liczba++){
             suma = 0;
-            for (j=1; j <= i/2; j++){
-                if(i % j == 0)
-                    suma = suma + j;
+            for (dzielnik=1; dzielnik <= liczba/2; dzielnik++){
+                if(liczba % dzielnik == 0)
+                    suma = suma + dzielnik;
             }
-            if (suma == i)
-                System.out.println(i);
+            if (suma == liczba)
+                System.out.println(liczba);
             
         }
     }

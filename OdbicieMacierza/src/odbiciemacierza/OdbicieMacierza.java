@@ -5,14 +5,14 @@ import java.util.Random;
 public class OdbicieMacierza {
     
     //Wypisywanie macierza
-static void printTable(int size,int table[][]){
-    for(int i = 0; i < size; i++){
-        for(int j = 0; j < size; j++){
-            System.out.format("%4d", table[i][j]);
+    static void printTable(int size,int table[][]){
+        for(int i = 0; i < size; i++){
+            for(int j = 0; j < size; j++){
+                System.out.format("%4d", table[i][j]);
             }
-        System.out.print("\n");
+            System.out.print("\n");
         }
-}
+    }
     
     
     public static void main(String[] args) {
@@ -34,7 +34,7 @@ static void printTable(int size,int table[][]){
         
         int przekatna_a = 0;
         int przekatna_b = 0;
-        for(int i = 0; i<size; i++){
+        for(int i = 0; i < size; i++){
             przekatna_a += table[i][i];
             przekatna_b += table[size-1-i][i];
         }

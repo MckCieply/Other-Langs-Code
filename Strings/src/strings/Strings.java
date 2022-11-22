@@ -3,6 +3,11 @@ package strings;
 import java.util.Scanner;
 public class Strings {
 
+    static void printTable(int size,String table[]){
+        for(int i = 0; i < size; i++){
+            System.out.println(table[i]);
+        }
+    }
     public static void main(String[] args) {
         Scanner scann = new Scanner (System.in);
         System.out.println("Podaj dlugosc tablicy: ");
@@ -13,6 +18,9 @@ public class Strings {
             System.out.print("Podaj stringa: ");
             table[i] = scann.nextLine();
         }
+        printTable(size, table);
+
+        System.out.print("\n---------------------------------\n\n");
         //Sortowanie leksorgaficzne
         for(int i = 0; i < size - 1; i++){
             for(int j=i+1; j <size; j++){
@@ -24,10 +32,10 @@ public class Strings {
             }
         }
         
-        for (int i = 0; i < size ; i++){
-            System.out.print(table[i]+" ");
-        }
-    System.out.print("\n---------------------------------\n");
+        //wypisz
+    printTable(size, table);
+
+    System.out.print("\n---------------------------------\n\n");
         //Sortowanie po dlugosci
         for(int i = 0; i < size - 1; i++){
             for(int j=i+1; j <size; j++){
@@ -38,9 +46,8 @@ public class Strings {
                 }
             }
         }
-        for (int i = 0; i < size ; i++){
-            System.out.print(table[i]+" ");
-        }
+        // wypisz
+        printTable(size, table);
     }
 }
 

@@ -39,6 +39,9 @@ static void printTable(int size,int table[][]){
             przekatna_b += table[size-1-i][i];
         }
         System.out.println("--------------------------------------");
+        System.out.println("Przekatna z lewego gornego do prawego dolnego rogu: " + przekatna_a);
+        System.out.println("Przekatna z prawego gornego do lewego dolnego rogu: " + przekatna_b);
+        System.out.println("--------------------------------------");
         for(int i = 0; i < size; i++){
             for(int j = i; j < size; j++){
                 int temp = table[i][j];

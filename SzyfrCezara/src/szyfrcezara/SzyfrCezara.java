@@ -12,23 +12,27 @@ public static void main(String[] args) {
     String wynik = "";
     System.out.println("Podaj tekst: ");
     String input = scann.nextLine();
-    System.out.println("Podaj przesuniecie: ");
+    System.out.println("Podaj przesuniecie[-100 -> 100]: ");
     int przesuniecie = scann.nextInt();
-    for(int i = 0; i < input.length(); i++){
-        //ity element ciagu
-        //sprawdzenie indexu
-        char znak = input.charAt(i);
-        for(int j = 0; j<size; j++){
-            if ( (char)znak == tablicaZnakow[j]){
-                int index = j + przesuniecie;
-                index = index%size;
-                char chr = tablicaZnakow[index];
-                wynik += chr;
+    if(przesuniecie > -101 && przesuniecie < 101){
+        for(int i = 0; i < input.length(); i++){
+            //ity element ciagu
+            //sprawdzenie indexu
+            char znak = input.charAt(i);
+            for(int j = 0; j<size; j++){
+                if ( (char)znak == tablicaZnakow[j]){
+                    int index = j + przesuniecie;
+                    index = index%size;
+                    char chr = tablicaZnakow[index];
+                    wynik += chr;
+                }
             }
         }
-    }
     System.out.println(wynik);
-    
+    }
+    else{
+        System.out.println("Niepoprawne przesuniecie");
+    }
     
     }   
 }

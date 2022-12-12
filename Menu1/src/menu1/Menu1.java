@@ -9,9 +9,19 @@ public class Menu1 {
 
     }
     static void piszTab(String arr[]){
-        System.out.println("Tablica");
+        System.out.println("Wypisz tablice ");
             for(String str: arr)
                 System.out.println(str + " ");
+    }
+    static void sortLen(String arr[]){
+        System.out.println("Sortowanie wedlug dlugosci");
+        for (int i = 0; i <arr.length -1; i++)
+            for(int j = 0; j < arr.length -1; j++)
+                if(arr[j].length() > arr[j+1].length()){
+                    String aux = arr[j];
+                    arr[j] = arr[i];
+                    arr[i] = aux;
+                }
     }
     
     static void menu(String tab[]){
@@ -36,6 +46,7 @@ public class Menu1 {
         }     
         else if (nr == 4){
             System.out.println("WYBRANO 4");
+            sortLen(tab);
             menu(tab);
         }
         else if(nr == 0){
@@ -46,7 +57,7 @@ public class Menu1 {
         }
     }
     public static void main(String[] args) {
-    System.out.println("MENU\n-------------------------------\n1. Pozycja 1 \n2. Pozycja 2 \n3. Pozycja 3\n4. Pozycja 4\n0. Pozycja 0");
+    System.out.println("MENU\n-------------------------------\n1. Uzupelnij tablice \n2. Wypisz tablice \n3. Sorotwanie leksograf\n4. Sortowanie dlugosci\n0. Koniec");
     String tab[] = null;
     menu(tab);
     }

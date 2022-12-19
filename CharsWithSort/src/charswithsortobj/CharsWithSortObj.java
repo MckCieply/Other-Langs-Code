@@ -1,6 +1,7 @@
 package charswithsortobj;
 
 import java.util.Scanner;
+import java.io.*;
 
 class Znak{
     
@@ -15,7 +16,7 @@ class Znak{
 
 public class CharsWithSortObj {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException{
         
         Scanner input = new Scanner( System.in );
         
@@ -24,8 +25,8 @@ public class CharsWithSortObj {
         for( int i = 0; i < liczniki.length; i++ )
             liczniki[ i ] = new Znak((char)i, 0);       
         
-        System.out.print("Podaj tekst: ");
-        String tekst = input.nextLine();
+        //System.out.print("Podaj tekst: ");
+        String tekst = czytajPlik("plik.txt");                // HERE
         
         for( int i=0; i<tekst.length(); i++)
             liczniki[ tekst.charAt(i) ].licznik++;
@@ -43,5 +44,25 @@ public class CharsWithSortObj {
             if( zn.licznik > 0 )
                System.out.println( zn.znak + ":" + zn.licznik );
         
+    }
+    
+    public static String czytajPlik( String plik ) throws IOException{
+        BufferedReader in = null;
+        String l;
+        String output = "";
+
+        try{ 
+            in = new BufferedReader( new FileReader( plik ));
+            
+            while((l = in.readLine())!=null){
+                output += l;
+            }
+                
+            return output;
+        }
+        finally{
+            
+            if(in != null) in.close();  
+        }
     }
 }

@@ -1,1 +1,3 @@
-Zobaczymy jaki bedzie wynik tego wspanialego kodu
+Zobaczymy jaki bedzie wynik tego wspanialego 
+
+kodu

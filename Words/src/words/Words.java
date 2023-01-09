@@ -10,18 +10,20 @@ public class Words {
         int allWords = 0;
         int allSigns = 0;
         int allSignsWOspaces = 0;
+        int allWordsWOenters = 0;
         try{ 
             in = new BufferedReader( 
                        new FileReader( plik ));
      
             while((row = in.readLine())!=null){
-                row = row.trim();
-                String[] words = row.split(" +");
+                String[] words = row.trim().split(" +");
                 allWords += words.length;
                 
                 allSigns += row.length();
                 for (String x :words){
                     allSignsWOspaces += x.length();
+                    if(!(x.equals("")))
+                        allWordsWOenters += 1;
                 }
                 
             }
@@ -30,7 +32,7 @@ public class Words {
             if(in != null) 
                 in.close();
             }
-        System.out.print("Liczba slow to: " + allWords +"\n"
+        System.out.print("Liczba slow to: " + allWords +"( tym "+ (allWords - allWordsWOenters) +" słów pustych)\n"
                 + "Liczba znaków to: " + allSigns + "(w tym "+ (allSigns - allSignsWOspaces )+" spacji)\n");
     }   
 }

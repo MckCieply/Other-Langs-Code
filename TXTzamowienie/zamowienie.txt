@@ -1,0 +1,4 @@
+choinka,1,149.99
+lalka,3,24.99
+lampka,50,7.33
+kubek,10,15

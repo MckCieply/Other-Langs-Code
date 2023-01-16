@@ -1,0 +1,6 @@
+dom   4 0 190 miasto
+willa 2 1 450 miasto
+domek 1 0 150 wies
+super 3 1 550 miasto
+duzy  5 1 750 miasto
+maly  1 0 200 wies

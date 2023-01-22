@@ -9,6 +9,7 @@ public class RAFHomework {
     public static void main(String[] args) throws IOException{
     RandomAccessFile raf = new RandomAccessFile("dane.txt","r");
     String[] elements;
+    int changes = 0;
     raf.seek(0);
     while(true){
         try{
@@ -21,6 +22,7 @@ public class RAFHomework {
             char litera = nazwisko.charAt(0);
             if(!(litera >= 65 && litera<= 90)){
                 nazwisko = nazwisko.replace(nazwisko.charAt(0), (char)(litera-32));
+                changes += 1;
             }
             double koszt = Double.parseDouble(elements[elements.length-1]);
             koszt *= 1.25;
@@ -37,7 +39,7 @@ public class RAFHomework {
             break;
         }
     }
+    System.out.print("Wystapilo "+ changes+ " zmian");
     raf.close();
-    }
-    
+    }  
 }

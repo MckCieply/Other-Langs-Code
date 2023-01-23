@@ -50,16 +50,17 @@ public class DataFile {
             towar  = inBin.readUTF();
             lSztuk = inBin.readInt();
             cena   = inBin.readDouble(); // uwaga na kolejność danych
+            cena *= 1.20;
             koszt = lSztuk * cena;
-            writer.println("Zamówiłeś " + lSztuk + " sztuk produktu " + towar + " po " + cena 
-                             + " co daje " + koszt );
+            writer.println("Zamówiłeś " + lSztuk + " sztuk produktu " + towar + " po " + Math.round(cena)
+                             + " PLN co daje " + Math.round(koszt)+" PLN" );
             suma += koszt;
         }
     }
     catch (EOFException e){ // koniec pliku
         if( inBin  != null) inBin.close();
         if( writer != null) writer.close();
-        System.out.println("Zapłaciłeś " + suma);
+        System.out.println("Zapłaciłeś " + Math.round(suma) + "PLN");
     }   
     }
     

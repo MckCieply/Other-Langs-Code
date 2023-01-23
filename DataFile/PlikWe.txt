@@ -1,0 +1,9 @@
+lizak
+25
+1.5
+koszula
+100
+33.33
+telefon
+2
+1500.2

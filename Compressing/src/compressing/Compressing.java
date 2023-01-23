@@ -1,20 +1,34 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
+
 package compressing;
 
-/**
- *
- * @author mwppl
- */
 public class Compressing {
-
-    /**
-     * @param args the command line arguments
-     */
+    public static void convert(char x, int number){
+        String output = "";
+        for(int i=0; i<number; i++){
+            output+=x;
+        }
+        System.out.print(output);
+    }
     public static void main(String[] args) {
-        // TODO code application logic here
+        String input = "aaaaaaccccb";
+        int counter = 1;
+        for(int i = 1; i<input.length(); i++){
+            char x = input.charAt(i);
+            if (x == input.charAt(i-1)){
+                counter +=1;
+                if(input.charAt(i+1) != x){
+                    convert(x, counter);
+                }
+            }
+            else if(x !=input.charAt(i-1) && i == input.length()-1){
+                counter = 1;
+                convert(x, counter);
+            }
+            else{
+                counter = 1;
+                
+            }
+        }
     }
     
 }
